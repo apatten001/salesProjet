@@ -1,0 +1,28 @@
+<table class="table table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>First Name </th>
+            <th>Last Name </th>
+            <th>Email  </th>
+            <th>Sales Volume </th>
+            <th>Met Quata?</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <!-- Angular structural directive for statement-->
+        <tr *ngFor="let person of salesPersonList">
+            <td>{{person.firstName}}</td>
+            <td>{{person.lastName}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.salesVolume | currency:"USD"}}</td>
+            <td>
+                <!-- Angular structural directive if statement-->
+                <div *ngIf="person.salesVolume >=76000; else myElseBlock">Yes</div>
+                <ng-template #myElseBlock>No</ng-template>
+            </td>
+
+
+        </tr>
+    </tbody>
+</table>
