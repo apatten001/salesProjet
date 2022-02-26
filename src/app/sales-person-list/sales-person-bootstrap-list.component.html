@@ -1,17 +1,22 @@
-<table class="table table-hover table-striped">
+<style>
+    .highlight {
+        background-color: green;
+    }
+</style>
+<table class="table">
     <thead class="thead-dark">
         <tr>
             <th>First Name </th>
             <th>Last Name </th>
             <th>Email  </th>
             <th>Sales Volume </th>
-            <th>Met Quata?</th>
+            <th>Met Quota?</th>
         </tr>
     </thead>
 
     <tbody>
         <!-- Angular structural directive for statement-->
-        <tr *ngFor="let person of salesPersonList">
+        <tr *ngFor="let person of salesPersonList" [ngClass]="{highlight:person.salesVolume >=76000}">
             <td>{{person.firstName}}</td>
             <td>{{person.lastName}}</td>
             <td>{{person.email}}</td>
